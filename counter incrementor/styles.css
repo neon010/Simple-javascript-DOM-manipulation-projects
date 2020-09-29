@@ -1,0 +1,34 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6495ed;
+}
+.container{
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #d3d3d3;
+    flex: 0 0 60%;
+    border-radius: 8px;
+}
+.value{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-size: 40px;
+}
+button{
+    height: 2.5rem;
+    width: 6rem;
+    margin: 0.1rem ;
+    border-radius: 6px;
+}
