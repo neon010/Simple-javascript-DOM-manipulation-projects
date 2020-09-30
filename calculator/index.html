@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator" style="display: flex; flex-direction: column; width: 262px; height: 360px; background-color: #708c98">
+            <div class="formula-screen" id="formula-screen">0</div>
+            <div class="output-screen" id="output-screen"></div>
+            <div style="margin: 5px 5px 5px 5px; height: 240px;">
+                <button class="btn operator" id="clear" value="AC" style="background-color: rgb(172, 57, 57);">AC</button>
+                <button class="btn operator" id="backspace" style="background-color: rgb(172, 57, 57);">C</button>
+                <button class="btn operator" id="divide" value="/">/</button>
+                <button class="btn operator" id="multiply" value="*">*</button>
+                <button class="btn number" id="seven" value="7">7</button>
+                <button class="btn number" id="eight" value="8">8</button>
+                <button class="btn number" id="nine" value="9">9</button>
+                <button class="btn operator" value="-" id="subtract" >-</button>
+                <button class="btn number" id="four" value="4">4</button>
+                <button class="btn number" id="five" value="5">5</button>
+                <button class="btn number" id="six" value="6">6</button>
+                <button class="btn operator" value="+" id="add" >+</button>
+                <button class="btn number" id="one" value="1">1</button>
+                <button class="btn number" id="two" value="2">2</button>
+                <button class="btn number" id="three" value="3">3</button>
+                <button class="btn operator" id="equal" value="=" style="height: 84px; position: absolute; margin-left: 5px; background-color: #27ae60;">=</button>
+                <button class="btn number" style="width: 120px;" value="0">0</button>
+                <button class="btn number decimal" id="decimal" value=".">.</button>
+            </div>
+        </div> 
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.formula-screen{
+    position: relative;
+    height: 60px;
+    margin: 5px 9px 5px 7px;
+    background-color: #fff;
+    text-align: right;
+    border-radius: 4px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.output-screen{
+    position: relative;
+    height: 60px; 
+    margin: 5px 9px 5px 7px;
+    background-color: #fff;
+    text-align: right; 
+    align-items: center;
+    border-radius: 4px;
+    font-size: 30px;
+    font-weight: bold;
+}
+button{
+    width: 55px;
+    height: 40px;
+    margin: 2px 2px 2px 2px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+}
+button:hover{
+    background-color: #1e555c;
+    cursor: pointer;
+}
+#clear:hover{
+    background-color: red;
+}
