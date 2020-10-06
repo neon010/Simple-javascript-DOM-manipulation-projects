@@ -1,3 +1,7 @@
+let bank = document.getElementById("bank-one-two");
+let displayMsg = document.getElementById("display");
+let power = document.getElementById("power");
+
 function playSound(track){
   let myAudio = new Audio(track);
   myAudio.play();
@@ -5,15 +9,6 @@ function playSound(track){
   myAudio.volume = val/100;
 
 }
-
-
-
-let displayMsg = document.getElementById("display");
-
-//document.addEventListener("keypress", (event) => {
-  
-//})
-
 
 function playBankOne(id){
   switch(id){
@@ -97,12 +92,10 @@ function playBankTwo(id){
     }
 }
 
-
-function bankOneTwo(){
+function bankOneTwoClick(){
   let drumPad = document.getElementsByClassName("drum-pad");
   for (let i = 0; i < drumPad.length; i++) {
     drumPad[i].addEventListener("click", () => {
-      let bank = document.getElementById("bank-one-two");
       if(bank.checked){
         playBankTwo(drumPad[i].id);
       }else{
@@ -112,11 +105,25 @@ function bankOneTwo(){
 }
 }
 
-let power = document.getElementById("power");
-power.addEventListener("change", () => {
-  if(power.checked){
-    bankOneTwo();
-  }else{
-    console.log(power.checked);
-  }
-})
+function bankOneTwoKey(){
+  document.addEventListener("keypress", (event) => {
+    console.log(event.key.toUpperCase());
+    if(bank.checked){
+      playBankTwo(event.key.toUpperCase());
+    }else{
+      playBankOne(event.key.toUpperCase());
+    }
+  })
+}
+
+function playDrumMachine(){
+  power.addEventListener("change", () => {
+    if(power.checked){
+      bankOneTwoClick();
+      bankOneTwoKey()
+    }else{
+      console.log(power.checked);
+    }
+  })
+}
+playDrumMachine();
