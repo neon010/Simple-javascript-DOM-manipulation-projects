@@ -1,7 +1,5 @@
-//setInterval(setClock, 1000);
-
+let dateTime = new Date();
 function getdate(){
-    let dateTime = new Date();
     let year = dateTime.getFullYear();
     let month = dateTime.getMonth();
     let monthList = ["January", "Feburary", "March", "April", "May", "June",
@@ -18,11 +16,7 @@ function getdate(){
     let printYear = document.getElementById("year");
     printDay.textContent = day;
     printMonthName.textContent = monthName;
-    if(parseInt(date) < 10){
-        printDate.textContent = `0${date}`;
-    }else{
-        printDate.textContent = date;
-    }
+    printDate.textContent = parseInt(date) < 10 ? `0${date}`: date;
     printYear.textContent = year;
 
 }
@@ -35,24 +29,17 @@ function setClock(){
     let printHour = document.getElementById("hour");
     let printMinute = document.getElementById("minute");
     let printSecond = document.getElementById("second");
-    printHour.innerText = localHour < 10 ? `0${localHour}`: hour;
-    if(parseInt(minute) < 10){
-        printMinute.textContent = `0${minute}`;
-    }else{
-        printMinute.textContent = minute;
-    }
-    if(parseInt(second) < 10){
-        printSecond.textContent = `0${second}`;
-    }else{
-        printSecond.textContent = second;
-    }
+    printHour.innerText = localHour < 10 ? `0${hour}`: `0${localHour}`;
+    printMinute.textContent = minute < 10 ? `0${minute}`:minute;
+    printSecond.textContent = second < 10 ? `0${second}`: second;
+
     let session = document.getElementById("session");
-    if(hour >= 12){
-        session.textContent = "PM"
-    }
+    session.textContent = hour >= 12 ? "PM" :"AM";
+    
     //setInterval(setClock, 500);
 }
 getdate();
+setInterval(getdate,1000);
 setInterval(setClock, 500);
 setClock();
 
