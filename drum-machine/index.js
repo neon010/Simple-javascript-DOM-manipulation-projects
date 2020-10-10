@@ -1,6 +1,9 @@
 let bank = document.getElementById("bank-one-two");
 let displayMsg = document.getElementById("display");
 let power = document.getElementById("power");
+let drumPad = document.getElementsByClassName("drum-pad");
+
+
 
 function playSound(track){
   let myAudio = new Audio(track);
@@ -107,7 +110,6 @@ function bankOneTwoClick(){
 
 function bankOneTwoKey(){
   document.addEventListener("keypress", (event) => {
-    console.log(event.key.toUpperCase());
     if(bank.checked){
       playBankTwo(event.key.toUpperCase());
     }else{

@@ -29,7 +29,7 @@ function setClock(){
     let printHour = document.getElementById("hour");
     let printMinute = document.getElementById("minute");
     let printSecond = document.getElementById("second");
-    printHour.innerText = localHour < 10 ? `0${hour}`: `0${localHour}`;
+    printHour.innerText = hour < 10 ? `0${hour}`: `0${localHour}`;
     printMinute.textContent = minute < 10 ? `0${minute}`:minute;
     printSecond.textContent = second < 10 ? `0${second}`: second;
 

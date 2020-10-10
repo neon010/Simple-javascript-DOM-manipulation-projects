@@ -37,6 +37,9 @@ body{
     box-shadow: #3a18c4 3px 3px 5px;
     font-size: 1.9rem;
 }
+.drum-pad:active{
+    background-color: blue;
+}
 .control{
     width: 100px;
     margin: auto;
