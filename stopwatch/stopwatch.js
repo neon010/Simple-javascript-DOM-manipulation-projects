@@ -45,10 +45,10 @@ function getTimer(){
     return stopwatch.textContent = (m < 10 ? "0"+m : m )+ ":" + (s < 10 ? "0"+s: s )+ ":" + (ms < 10 ? "0"+ms: ms) ;
 }
 
-function restart(){
+/*function restart(){
     stop();
     start();
-}
+}*/
 
 function lap(){
     if(timer){
@@ -58,6 +58,6 @@ function lap(){
     }
 }
 
-function resetLaps(){
+/*function resetLaps(){
     laps.innerHTML = "";
-}
+}*/
