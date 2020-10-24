@@ -1,0 +1,32 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.container{
+    min-height: 190px;
+    min-width: 190px;
+    border-radius: 50%;
+    border:4px solid #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.stopwatch{
+    color: cadetblue;
+    margin: auto;
+    font-size: 3rem;
+}
+button{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: cadetblue;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}

@@ -7,19 +7,17 @@
     <title>Countdown Timer</title>
 </head>
 <body>
-    <div class="timer-container">
+    <div class="timer-container" id="timer-container">
         <span>
-            <input type="number" name="" id="hour" min="0" placeholder="00" value="0">
+            <input type="number" name="" id="user-hour" min="0" placeholder="00" value="0">
         </span>:
         <span>
-            <input type="number" name="" id="minute" max="60" min="0" placeholder="00" value="0">
+            <input type="number" name="" id="user-minute" max="60" min="0" placeholder="00" value="0">
         </span>:
         <span>
-            <input type="number" name="" id="second" max="60" min="0" placeholder="00" value="0">
+            <input type="number" name="" id="user-second" max="60" min="0" placeholder="00" value="0">
         </span>
         <button type="button" id="start">START</button>
-        <button type="button" id="stop">STOP</button>
-        <button type="reset" id="reset">RESET</button>
     </div>
     <script src="timer.js"></script>
 </body>
