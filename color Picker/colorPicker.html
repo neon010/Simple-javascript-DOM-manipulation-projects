@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Picker</title>
+</head>
+<body>
+    <div class="container">
+        <div class="name">
+            <h2>Color Picker</h2>
+        </div>
+        <div class="color" id="colorPick"></div>
+        <div class="slidecontainer">
+            <label for="red">Red: </label>
+            <input type="range" id="redSlider" class="slider" min="0" max="255" 
+            value="100" onchange="changeBackgroundColor()">
+            
+            <label for="green">Red: </label>
+            <input type="range" id="greenSlider" class="slider" min="0" max="255"
+             value="200" onchange="changeBackgroundColor()">
+    
+            <label for="blue">Blue: </label>
+            <input type="range" id="blueSlider" class="slider" min="0" max="255" 
+            value="150" onchange="changeBackgroundColor()">
+        </div>
+        <div class="rgb">
+            <div class="red">
+                <label for="red">Red</label><br>
+                <input type="number" id="redValue" value="0" max="255" min="0"
+                    style="width: 40px; height:25px; margin-right: 5px; text-align: center; " onchange="changesliderAndBackground()">
+            </div>
+
+            <div class="green">
+                <label for="green">green</label><br>
+                <input type="number" id="greenValue" value="0" max="255" min="0"
+                style="width: 40px; height:25px; margin-right: 5px; text-align: center;" onchange="changesliderAndBackground()">
+            </div>
+
+            <div class="blue">
+                <label for="blue">Blue</label><br>
+                <input type="number" id="blueValue" value="0" max="255" min="0" 
+                style="width: 40px; height:25px; margin-right: 5px; text-align: center;" onchange="changesliderAndBackground()">
+            </div>
+        </div>
+        <div class="hex">
+            <label for="hex">Hex</label>
+            <input type="text" id="hexValue" value="#000000">
+        </div>
+    </div>
+    <script src="colorPicker.js"></script>
+</body>
+</html>
