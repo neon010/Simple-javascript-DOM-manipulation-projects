@@ -90,22 +90,7 @@ body{
 }
 .btn-previous-next{
     display: flex;
-    justify-content: space-between;
-}
-#btn-previous{
-    color: #fff;
-    background-color: indigo;
-    padding: 1.4rem 2rem;
-    width: 10rem;
-    border-radius: 3rem;
-    font-size: 1.2rem;
-    border: none;
-}
-#btn-previous:hover{
-    cursor: pointer;
-    background-color: #fff;
-    color: indigo;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+    justify-content: flex-end;
 }
 #btn-next{
     color: #fff;
@@ -126,4 +111,22 @@ body{
 .active{
     background-color: indigo;
     color: #fff;
+}
+
+.award-icon{
+    color: white;
+    font-size: 300px;
+}
+.user-name,
+.user-result,
+.user-time{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+}
+.anotherQuiz{
+    margin-top: 10px;
+}
+.anotherQuiz button{
+    height: 35px;
 }

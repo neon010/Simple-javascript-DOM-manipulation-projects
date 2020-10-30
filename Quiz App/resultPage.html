@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Result</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <i class="fas fa-award award-icon"></i>
+            <h3 class="user-name">Well done! <span id="name"></span></h3>
+            <p class="user-result">Your Result: <span id="Points"></span></p>
+            <p class="user-time">Time Taken : <span id="time"></span></p>
+        </div>
+        <div class="anotherQuiz">
+            <button id="anotherQuiz" onclick="takeQuiz()">Take Another Quiz</button>
+        </div>
+    </div>
+    <script src="result.js"></script>
+</body>
+</html>

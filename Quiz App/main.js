@@ -1,56 +1,84 @@
-let count = 0;
-let btnNext = document.getElementById("btn-next");
-let btnPrevious = document.getElementById("btn-previous");
+let result = 0
+const questionEl = document.getElementById("mcq-question");
 
-btnNext.addEventListener("click", nextQuestion);
-btnPrevious.addEventListener("click", previousQuestion);
+let name = document.getElementById("userName");
+name.textContent = sessionStorage.getItem("name");
+
+let btnnext = document.getElementById("btn-next");
+
+
+let currentQuiz = 0;
 
 function showMcq(){
     let questions = document.getElementById("mcq");
     questions.innerHTML = `                    
-                        <h2>${quiz[count].id}. ${quiz[count].question}</h2>
+                        <h2>${quiz[currentQuiz].id}. ${quiz[currentQuiz].question}</h2>
                         <ul class="option-group">
                             <li class="option">
-                                <input type="radio" name="choice" value="${quiz[count].option[0]}"> ${quiz[count].option[0]}
+                                <input type="radio" name="answer" id="option-answer" value="${quiz[currentQuiz].option1}"> ${quiz[currentQuiz].option1}
                             </li>
                             <li class="option">                        
-                                <input type="radio" name="choice" value="${quiz[count].option[1]}"> ${quiz[count].option[1]}
+                                <input type="radio" name="answer" id="option-answer" value="${quiz[currentQuiz].option2}"> ${quiz[currentQuiz].option2}
                             <li class="option">
-                                <input type="radio" name="choice" value="${quiz[count].option[2]}"> ${quiz[count].option[2]}
+                                <input type="radio" name="answer" id="option-answer" value="${quiz[currentQuiz].option3}"> ${quiz[currentQuiz].option3}
                             </li>
                             <li class="option">
-                                <input type="radio" name="choice" value="${quiz[count].option[3]}"> ${quiz[count].option[3]}
+                                <input type="radio" name="answer" id="option-answer" value="${quiz[currentQuiz].option4}"> ${quiz[currentQuiz].option4}
                             </li>
                         </ul>`
 
 }
 
-function nextQuestion(){
-    let choices = document.querySelectorAll('input[name="choice"]');
-    for(let i = 0; i <= choices.length-1; i++){
-        if (choices[i].checked) {
-            const userAnswer = choices[i].value;
-            console.log("userAnswer: " +userAnswer, quiz[count].answer);
-        }    
+function next(){
+    if(currentQuiz < quiz.length){
+        if(userInputAnswer()==quiz[currentQuiz].answer){
+            result++;
+            sessionStorage.setItem("result", result);
+        };
+        currentQuiz++;
+        showMcq();
+    }else{
+        btnnext.textContent = "submit";
+        sessionStorage.setItem("time", `${minute} minute and ${seconds} second`);
+        clearInterval(myTime);
+        location.href = "resultPage.html";
+        return;
     }
-    //showMcq(questionCount);
-    if(count == 5){
-        count = 0;
-        showMcq(count);
-    }
-    //questionCount++;
-    showMcq(count);
-    count++;
 }
 
-function previousQuestion(){
-    if(count == 0){
-        count = 5;
-        showMcq(count);
+
+function userInputAnswer(){
+    let mcqOptions = document.querySelectorAll("input[name='answer']");
+    let userAnswer;
+    //let mcqOption = document.getElementById("option-answer");
+    for(let answer of mcqOptions){
+        if(answer.checked){
+            userAnswer = answer.value;
+        }
     }
-    count--;
-    showMcq(count);
+    return userAnswer;
 }
+
+let dt = new Date(new Date().setTime(0));
+let time = dt.getTime();
+let seconds = Math.floor((time % (100*60))/1000);
+let minute = Math.floor((time % (1000*60*60))/(1000*60));
+
+let myTime = setInterval(function(){
+    if(seconds < 59){
+        seconds++
+    }else{
+        minute++;
+        seconds = 0;
+    }
+    let formatted_sec = seconds < 10 ? `0${seconds}` : `${seconds}` ;
+    let formatted_min = minute < 10 ? `0${minute}` : `${minute}` ;
+    document.getElementById("timer").textContent = `${formatted_min} : ${formatted_sec}`;
+}, 1000)
+
+showMcq();
+
+
 
 
 
