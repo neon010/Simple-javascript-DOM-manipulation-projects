@@ -3,25 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <link rel="stylesheet" href="timer.css">
     <title>Countdown Timer</title>
 </head>
 <body>
-    <div class="timer-container">
-        <div class="timer-input" id="timer-input">
-            <input type="number" id="user-hour" value="0" min="0"><span>h</span>
-            <input type="number" id="user-minute" value="0" min="0" max="60"><span>m</span>
-            <input type="number" id="user-second" value="0" min="0" max="60"><span>s</span>
-        </div>
-        <div class="controls">
-            <button onclick="reset()" id="reset">Reset</button>
-            <button onclick="start()" id="start">
-                <i class="fas fa-play" style="font-size: 1rem;"></i>
-            </button>
-            <button onclick="pause()" id="pause">
-                <i class="fas fa-pause" style="font-size: 1rem;"></i>
-            </button>
+    <div class="app-container">
+        <div class="app" id="app"></div>
+        <div class="button-container">
+            <button id="start" onclick="startTimer()">start</button>
+            <button id="pause" onclick="pauseTimer()">pause</button>
+            <button id="Reset" onclick="resetTimer()">Reset</button>
         </div>
     </div>
     <script src="timer.js"></script>

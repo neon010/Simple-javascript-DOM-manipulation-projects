@@ -1,5 +1,5 @@
 let ms = 0 , s = 0, m = 0;
-let timer;
+let timer ;
 
 
 let stopwatch = document.querySelector(".stopwatch");
