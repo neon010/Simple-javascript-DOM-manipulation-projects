@@ -1,7 +1,7 @@
 // Constant for progress bar
 const FULL_DASH_ARRAY = 283;    // perimeter of circle
-const WARNING_THRESHOLD = 10;   //warning perimeter
-const ALERT_THRESHOLD = 5;      //Alert Perimeter
+const WARNING_THRESHOLD = 20;   //warning perimeter
+const ALERT_THRESHOLD = 10;      //Alert Perimeter
 const COLOR_CODES = {
   info: {
     color: "blue"
@@ -16,13 +16,16 @@ const COLOR_CODES = {
   }
 };
 
+//Settings time for timer
 const TIME_LIMIT = 60;  // Timer total time
 let timerRunning;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
-let remainingPathColor = COLOR_CODES.info.color;
 
+//setting initial color code for progress bar
+let remainingPathColor = COLOR_CODES.info.color;
+ 
 // circle svg 
 document.getElementById("app").innerHTML = `
 <div class="base-timer">
@@ -50,11 +53,9 @@ document.getElementById("app").innerHTML = `
 
 
 function onTimesUp() {
-  clearInterval(timerInterval);
   document.getElementById("start").style.display = "block";
   document.getElementById("pause").style.display = "none";
   document.getElementById("Reset").style.display = "none";
-
 }
 
 function startTimer() {
@@ -65,10 +66,12 @@ function startTimer() {
       document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
       setCircleDasharray();
       setRemainingPathColor(timeLeft); 
-      if (timeLeft < 0) {
+      if (timeLeft <= 0) {
         onTimesUp();
         clearInterval(timerInterval);
-        timePassed = 0;
+        timePassed = 0; 
+        document.getElementById("base-timer-path-remaining").classList.remove(COLOR_CODES.alert.color);
+        document.getElementById("base-timer-path-remaining").classList.add(COLOR_CODES.info.color);    
       }
     }, 1000);
     document.getElementById("start").style.display = "none";
@@ -82,7 +85,6 @@ function pauseTimer(){
   clearInterval(timerInterval);
 }
 function resetTimer(){
-    console.log("reset");
     clearInterval(timerInterval);
     timeLeft = 60;
     timePassed = 0;
@@ -93,6 +95,7 @@ function resetTimer(){
     setCircleDasharray();
     setRemainingPathColor(timeLeft);  
 }
+
 
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
